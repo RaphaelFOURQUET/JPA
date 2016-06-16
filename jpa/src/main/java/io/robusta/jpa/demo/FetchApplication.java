@@ -24,9 +24,15 @@ public class FetchApplication {
 
 		System.out.println("#############"+cheaps);
 
-		//28 : id de ma categorie fooding en base
-		List<ProductCollection> foodings = em.find(CategoryCollection.class, 28).getProducts();
-
+//		//28 : id en dur de ma categorie fooding en base : moche
+//		List<ProductCollection> foodings = em.find(CategoryCollection.class, 28).getProducts();
+//		
+//		System.out.println("#############"+foodings);
+		
+		List<ProductCollection> foodings = em
+				.createQuery("Select p From CategoryCollection c Join c.products p Where c.id=:id Order By p.price", ProductCollection.class)
+				.setParameter("id", 28).getResultList();
+		
 		System.out.println("#############"+foodings);
 
 
