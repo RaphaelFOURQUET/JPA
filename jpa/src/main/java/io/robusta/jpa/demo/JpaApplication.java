@@ -1,14 +1,8 @@
 package io.robusta.jpa.demo;
 
-import java.util.Collection;
-import java.util.List;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
-import javax.persistence.EntityManager;
-import javax.persistence.FetchType;
-import javax.persistence.ManyToOne;
-
-import io.robusta.fora.EmFactory;
-import io.robusta.jpa.demo.entities.Caddie;
 import io.robusta.jpa.demo.entities.Category;
 import io.robusta.jpa.demo.entities.Product;
 
@@ -34,7 +28,8 @@ public class JpaApplication {
 		Category lowcost = new Category("low-cost");
 		Category fooding = new Category("fooding");
 		
-
+		
+		EntityManagerFactory instance = Persistence.createEntityManagerFactory("fora");
 	
 		
 		
