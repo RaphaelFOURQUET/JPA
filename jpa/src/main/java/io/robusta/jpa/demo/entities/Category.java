@@ -1,11 +1,8 @@
 package io.robusta.jpa.demo.entities;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 
 @Entity
 public class Category {
@@ -72,11 +69,6 @@ public class Category {
 			return false;
 		return true;
 	}
-
-
-
-
-
 
 
 }
