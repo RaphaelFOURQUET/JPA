@@ -6,7 +6,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import io.robusta.jpa.demo.entities.CategoryCollection;
 import io.robusta.jpa.demo.entities.ProductCollection;
 
 public class FetchApplication {
