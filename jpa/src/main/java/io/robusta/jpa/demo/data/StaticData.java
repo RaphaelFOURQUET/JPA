@@ -18,6 +18,12 @@ public class StaticData {
 	
 	public static List<CategoryCollection> categoryCList = new ArrayList<>();
 	
+	public static final String ENTITYMANAGER_FACTORY_NAME = "fora";
+	
+//	public static EntityManagerFactory instance = Persistence.createEntityManagerFactory("fora");
+//	
+//	public static EntityManager em = instance.createEntityManager();
+	
 	
 
 	//Category standard

@@ -17,7 +17,7 @@ public class CaddieApplication {
 	public static void main(String[] args) {
 
 
-		EntityManagerFactory instance = Persistence.createEntityManagerFactory("fora");
+		EntityManagerFactory instance = Persistence.createEntityManagerFactory(StaticData.ENTITYMANAGER_FACTORY_NAME);
 
 		EntityManager em = instance.createEntityManager();
 

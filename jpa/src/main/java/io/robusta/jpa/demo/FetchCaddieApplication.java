@@ -4,13 +4,14 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import io.robusta.jpa.demo.data.StaticData;
 import io.robusta.jpa.demo.entities.Product;
 
 public class FetchCaddieApplication {
 
 	public static void main(String[] args) {
 
-		EntityManagerFactory instance = Persistence.createEntityManagerFactory("fora");
+		EntityManagerFactory instance = Persistence.createEntityManagerFactory(StaticData.ENTITYMANAGER_FACTORY_NAME);
 
 		EntityManager em = instance.createEntityManager();
 
