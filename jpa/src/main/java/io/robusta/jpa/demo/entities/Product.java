@@ -17,23 +17,18 @@ public class Product{
 	@Id
 	@GeneratedValue
 	int id;
-	
-	
+
 	@Size(min=2, max=46)
 	@Column(nullable=false, length=15)
 	String name;
-	
-	
-	String email;
-	
+
 	@Min(0)
-	
 	float price;
-	
+
 	@ManyToOne(fetch=FetchType.LAZY)
 	Category category;
-	
-	
+
+
 	public Product() {
 	}
 
@@ -58,13 +53,13 @@ public class Product{
 		this.price = price;
 	}
 
-	
+
 
 	public int getId() {
 		return id;
 	}
-	
-	
+
+
 	@Override
 	public String toString() {
 		return this.name;
@@ -78,9 +73,9 @@ public class Product{
 		this.category = category;
 	}
 
-	
 
-	
-	
-	
+
+
+
+
 }

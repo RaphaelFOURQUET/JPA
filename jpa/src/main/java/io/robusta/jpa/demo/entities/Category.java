@@ -12,12 +12,11 @@ public class Category {
 	//Do we need an int id ?
 	@Id @GeneratedValue
 	int id;
+	
 	String name;
-	
 
-	
 	public Category() {
-		
+
 	}
 
 	public Category(String name) {
@@ -41,13 +40,13 @@ public class Category {
 	}
 
 
-	
+
 	@Override
 	public String toString() {
 		return this.name;
 	}
 
-	
+
 
 	@Override
 	public int hashCode() {
@@ -73,11 +72,11 @@ public class Category {
 			return false;
 		return true;
 	}
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
 }
