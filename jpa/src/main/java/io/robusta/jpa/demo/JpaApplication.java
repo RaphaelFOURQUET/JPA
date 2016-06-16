@@ -65,7 +65,7 @@ public class JpaApplication {
 		CategoryCollection cspC = new CategoryCollection(csp);
 		CategoryCollection luxeC = new CategoryCollection(luxe);
 		CategoryCollection foodingC = new CategoryCollection(fooding);
-		CategoryCollection premiumC = new CategoryCollection(fooding);
+		CategoryCollection premiumC = new CategoryCollection(premium);
 		CategoryCollection standardC = new CategoryCollection(standard);
 		CategoryCollection lowcostC = new CategoryCollection(lowcost);
 		
@@ -106,32 +106,32 @@ public class JpaApplication {
 		ketchup.setCategory(fooding);
 		for(Product p : productList)
 			em.persist(p);
-//		
-//		ketchup.setCategory(premium);
-//		
-//		Category ketchupCategory = ketchup.getCategory();
-//		int ketchupCatId = ketchupCategory.getId();
-//		
-//		System.out.println("##########Debut Tests##########");
-//		System.out.println("ketchupCategory : "+ketchupCategory);
-//		System.out.println("ketchupCatId : "+ketchupCatId);
-//		
-//		//Fin Transaction
-//		em.getTransaction().commit();
-//		
-//		
-//		//Debut de transaction
-//		em.getTransaction().begin();
-//		
-//		Category cat = em.find(Category.class, ketchupCatId);
-//		System.out.println("catName : "+cat.getName());
-//		//em.remove(cat);		//Secondary key binding problem
 		
-		for(ProductCollection prod : productCList)
-			em.persist(prod);
+		ketchup.setCategory(fooding);
 		
-		for(CategoryCollection cat : categoryCList)
-			em.persist(cat);
+		Category ketchupCategory = ketchup.getCategory();
+		int ketchupCatId = ketchupCategory.getId();
+		
+		System.out.println("##########Debut Tests##########");
+		System.out.println("ketchupCategory : "+ketchupCategory);
+		System.out.println("ketchupCatId : "+ketchupCatId);
+		
+		//Fin Transaction
+		em.getTransaction().commit();
+		
+		
+		//Debut de transaction
+		em.getTransaction().begin();
+		
+		Category cat = em.find(Category.class, ketchupCatId);
+		System.out.println("catName : "+cat.getName());
+		//em.remove(cat);		//Secondary key binding problem
+		
+		for(ProductCollection prodC : productCList)
+			em.persist(prodC);
+		
+		for(CategoryCollection catC : categoryCList)
+			em.persist(catC);
 
 		
 		List<ProductCollection> foodingCProd = foodingC.getProducts();
@@ -151,6 +151,10 @@ public class JpaApplication {
 		List<ProductCollection> cheaps = em.createQuery("Select p FROM ProductCollection p where p.price < 2", ProductCollection.class).getResultList();
 		
 		System.out.println("#############"+cheaps);
+		
+		List<ProductCollection> foodings = em.find(CategoryCollection.class, foodingC.getId()).getProducts();
+		
+		System.out.println("#############"+foodings);
 		
 		
 		//Fin Transaction

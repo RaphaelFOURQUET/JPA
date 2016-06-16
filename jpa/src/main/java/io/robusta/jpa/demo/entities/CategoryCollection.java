@@ -7,8 +7,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 
+/**
+ * Variante de Category implémentant une relation ManyToMany avec ProductCollection.
+ * @author INTI-0332
+ *
+ */
 @Entity
 public class CategoryCollection {
 	//Do we need an int id ?
@@ -18,6 +23,7 @@ public class CategoryCollection {
 	String name;
 	
 	@ManyToMany
+	@OrderBy("price")
 	List<ProductCollection> products = new ArrayList<>();
 
 	public CategoryCollection() {

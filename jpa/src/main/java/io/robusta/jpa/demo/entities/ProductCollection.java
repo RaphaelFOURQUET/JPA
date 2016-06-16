@@ -8,7 +8,11 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 
 
-
+/**
+ * Variante de Product implémentant une relation ManyToMany avec CategoryCollection
+ * @author INTI-0332
+ *
+ */
 @Entity
 public class ProductCollection{
 
