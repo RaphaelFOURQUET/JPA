@@ -23,6 +23,7 @@ public class JpaApplication {
 		Product shoes = new Product("Shoes", 15.00f);
 		Product chair = new Product("Chair", 10.00f);
 		Product hat = new Product("Hat", 70f);
+		
 		List<Product> productList = new ArrayList<>();
 		productList.add(ketchup);
 		productList.add(watch);
@@ -68,7 +69,22 @@ public class JpaApplication {
 		
 		ketchup.setCategory(premium);
 		
-		//System.out.println("############"+ketchup.getClass().getCanonicalName());
+		Category ketchupCategory = ketchup.getCategory();
+		int ketchupCatId = ketchupCategory.getId();
+		
+		System.out.println("##############################");
+		System.out.println("ketchupCategory : "+ketchupCategory);
+		System.out.println("ketchupCatId : "+ketchupCatId);
+		
+		//Fin Transaction
+		em.getTransaction().commit();
+		
+		//Debut de transaction
+		em.getTransaction().begin();
+		
+		Category cat = em.find(Category.class, ketchupCatId);
+		System.out.println("catName : "+cat.getName());
+		//em.remove(cat);
 		
 		
 		
